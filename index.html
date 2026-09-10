@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>六淨山房 · 知事官邸古蹟餐廳｜百年官邸 · 茶香咖啡 · 光影時光</title>
+<meta name="description" content="六淨山房 LiuJingShanFang — 台南知事官邸古蹟餐廳。古樹茶、靜心茶會、六吋輕乳酪蛋糕與官邸包場。在百年官邸的光影裡，留兩個小時給自己。">
+<meta property="og:title" content="六淨山房 · 知事官邸古蹟餐廳">
+<meta property="og:description" content="百年官邸 · 茶香咖啡 · 光影時光。一日兩時，與自己重逢。">
+<meta property="og:image" content="assets/hero-front.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1e17;
+  --ink-2:#14322708;
+  --pine:#143026;
+  --pine-2:#1c4335;
+  --jade:#3d7d5d;
+  --paper:#f6f1e7;
+  --paper-2:#efe7d8;
+  --paper-3:#e4d9c4;
+  --brick:#9d4a2c;
+  --seal:#b4342a;
+  --gold:#c2a15c;
+  --gold-2:#e0c88d;
+  --muted:#6d6355;
+  --shadow:0 30px 80px -40px rgba(13,30,23,.55);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:300;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--pine)}
+
+/* ---------- paper grain ---------- */
+body::after{
+  content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/><feColorMatrix type='saturate' values='0'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.5'/></svg>");
+  mix-blend-mode:multiply;
+}
+
+/* ---------- typography ---------- */
+.serif{font-family:"Noto Serif TC",serif}
+.latin{font-family:"Cormorant Garamond",serif;letter-spacing:.22em;text-transform:uppercase}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;font-weight:500;line-height:1.35;letter-spacing:.02em}
+.eyebrow{
+  font-family:"Cormorant Garamond",serif;font-size:.78rem;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.1rem;
+}
+.lead{font-size:1.05rem;color:var(--muted);max-width:46ch}
+section{position:relative}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.narrow{max-width:820px}
+
+/* ---------- scroll progress ---------- */
+#prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:10000;
+  background:linear-gradient(90deg,var(--jade),var(--gold));transition:width .1s linear}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;align-items:center;
+  justify-content:space-between;gap:2rem;
+  padding:1.1rem clamp(1.25rem,4vw,3rem);
+  transition:background .5s var(--ease),backdrop-filter .5s,padding .5s var(--ease),box-shadow .5s;
+}
+nav.solid{background:rgba(20,48,38,.82);backdrop-filter:blur(18px) saturate(1.3);padding:.7rem clamp(1.25rem,4vw,3rem);box-shadow:0 1px 0 rgba(226,208,160,.16)}
+nav .brand{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+nav .brand img{height:30px;width:auto;transition:height .5s var(--ease)}
+nav.solid .brand img{height:26px}
+nav ul{display:flex;gap:1.9rem;list-style:none;align-items:center}
+nav ul a{
+  font-size:.86rem;letter-spacing:.14em;color:rgba(246,241,231,.78);
+  position:relative;padding:.3rem 0;transition:color .35s;
+}
+nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .4s var(--ease)}
+nav ul a:hover,nav ul a.on{color:var(--gold-2)}
+nav ul a:hover::after,nav ul a.on::after{width:100%}
+.nav-cta{
+  border:1px solid rgba(226,208,160,.45);color:var(--gold-2);
+  padding:.5rem 1.15rem;border-radius:2px;font-size:.82rem;letter-spacing:.16em;
+  transition:all .4s var(--ease);white-space:nowrap;
+}
+.nav-cta:hover{background:var(--gold);color:var(--pine);border-color:var(--gold)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem}
+.burger span{width:24px;height:1px;background:var(--paper);transition:.35s}
+
+/* ---------- hero ---------- */
+.hero{height:100svh;min-height:620px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-bg{position:absolute;inset:0;background:url(assets/hero-front.jpg) center 34%/cover no-repeat;
+  animation:kb 32s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.06) translate3d(0,-.8%,0)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(8,20,15,.46) 0%,rgba(8,20,15,.06) 24%,rgba(8,20,15,.02) 50%,rgba(10,24,18,.34) 80%,rgba(13,30,23,.9) 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at 50% 44%,transparent 40%,rgba(6,16,12,.26) 100%)}
+.hero-inner{position:relative;z-index:3;padding:0 1.5rem;max-width:1000px}
+.hero-inner::before{content:"";position:absolute;inset:-18% -26%;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%,rgba(6,16,12,.5) 0%,rgba(6,16,12,.32) 40%,rgba(6,16,12,.1) 64%,transparent 78%)}
+.hero-logo{width:min(560px,74vw);margin:0 auto 2rem;opacity:0;transform:translateY(24px);
+  animation:rise 1.6s var(--ease) .3s forwards;filter:drop-shadow(0 10px 30px rgba(0,0,0,.7)) drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero h1{
+  color:var(--paper);font-size:clamp(1.5rem,3.6vw,2.5rem);font-weight:400;letter-spacing:.3em;
+  opacity:0;animation:rise 1.6s var(--ease) .6s forwards;text-shadow:0 2px 22px rgba(4,12,9,.75),0 1px 4px rgba(4,12,9,.5);
+}
+.hero .est{
+  display:inline-block;margin:1.6rem auto .4rem;color:var(--gold-2);font-family:"Cormorant Garamond",serif;
+  letter-spacing:.5em;font-size:.85rem;text-transform:uppercase;text-shadow:0 2px 14px rgba(4,12,9,.75);
+  opacity:0;animation:rise 1.6s var(--ease) .85s forwards;
+}
+.hero .tag{
+  color:rgba(246,241,231,.92);font-size:clamp(.95rem,1.6vw,1.12rem);letter-spacing:.24em;font-weight:300;
+  margin-top:1.5rem;opacity:0;animation:rise 1.6s var(--ease) 1.05s forwards;text-shadow:0 2px 16px rgba(4,12,9,.7);
+}
+.hero .rule{width:1px;height:56px;background:linear-gradient(var(--gold),transparent);margin:2.4rem auto 0;
+  opacity:0;animation:rise 1.6s var(--ease) 1.25s forwards}
+.scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:4;
+  color:rgba(246,241,231,.55);font-family:"Cormorant Garamond",serif;font-size:.72rem;letter-spacing:.4em;
+  text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.scrollcue i{display:block;width:1px;height:44px;background:rgba(246,241,231,.35);position:relative;overflow:hidden}
+.scrollcue i::after{content:"";position:absolute;top:-44px;left:0;width:1px;height:44px;background:var(--gold);
+  animation:drop 2.4s var(--ease) infinite}
+@keyframes drop{0%{top:-44px}60%,100%{top:44px}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(38px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.12s}.rv[data-d="2"]{transition-delay:.24s}
+.rv[data-d="3"]{transition-delay:.36s}.rv[data-d="4"]{transition-delay:.48s}
+.rv[data-d="5"]{transition-delay:.6s}.rv[data-d="6"]{transition-delay:.72s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero-bg{animation:none}}
+
+/* ---------- section frame ---------- */
+.sec{padding:clamp(5rem,11vw,9.5rem) 0}
+.sec-dark{background:var(--pine);color:var(--paper)}
+.sec-dark .lead{color:rgba(246,241,231,.7)}
+.sec-ink{background:var(--ink);color:var(--paper)}
+.sec-ink .lead{color:rgba(246,241,231,.66)}
+.vlabel{
+  position:absolute;top:clamp(4rem,9vw,7rem);right:clamp(1rem,3vw,2.4rem);
+  writing-mode:vertical-rl;font-family:"Noto Serif TC",serif;font-size:.82rem;letter-spacing:.55em;
+  color:rgba(109,99,85,.45);user-select:none;pointer-events:none;
+}
+.sec-dark .vlabel,.sec-ink .vlabel{color:rgba(226,208,160,.3)}
+.shead{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.shead h2{font-size:clamp(1.9rem,4.4vw,3.2rem)}
+.shead .zh-sub{color:var(--muted);margin-top:1rem;letter-spacing:.1em}
+.sec-dark .shead .zh-sub,.sec-ink .shead .zh-sub{color:rgba(246,241,231,.62)}
+.seal{width:38px;height:auto;flex-shrink:0;opacity:.92}
+
+/* ---------- intro / story ---------- */
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.story-txt p{margin-bottom:1.4rem;color:#3d3a33}
+.story-txt .big{font-family:"Noto Serif TC",serif;font-size:clamp(1.35rem,2.6vw,1.95rem);
+  line-height:1.75;color:var(--pine);margin-bottom:1.8rem}
+.story-fig{position:relative}
+.story-fig img{width:100%;height:clamp(380px,52vw,620px);object-fit:cover;box-shadow:var(--shadow)}
+.story-fig .cap{position:absolute;left:-1.4rem;bottom:1.6rem;background:var(--pine);color:var(--gold-2);
+  padding:.85rem 1.4rem;font-size:.78rem;letter-spacing:.28em;font-family:"Cormorant Garamond",serif;text-transform:uppercase}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--paper-3);margin-top:clamp(3rem,6vw,5rem)}
+.fact{background:var(--paper);padding:2rem 1.4rem;text-align:center}
+.fact b{display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.6vw,2.7rem);
+  font-weight:400;color:var(--pine);line-height:1}
+.fact span{display:block;margin-top:.6rem;font-size:.78rem;letter-spacing:.2em;color:var(--muted)}
+
+/* ---------- ribbon ---------- */
+.ribbon{background:var(--pine);color:var(--gold-2);padding:1.1rem 0;overflow:hidden;white-space:nowrap;
+  border-top:1px solid rgba(226,208,160,.18);border-bottom:1px solid rgba(226,208,160,.18)}
+.ribbon .track{display:inline-flex;gap:3.5rem;animation:slide 34s linear infinite;font-family:"Noto Serif TC",serif;
+  font-size:.92rem;letter-spacing:.36em}
+.ribbon .track span{opacity:.85}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- 茶會 sessions ---------- */
+.sessions{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.6vw,2.2rem)}
+.ses{position:relative;overflow:hidden;background:rgba(246,241,231,.045);
+  border:1px solid rgba(226,208,160,.18);padding:clamp(1.8rem,3.4vw,3rem);
+  transition:transform .8s var(--ease),border-color .6s,background .6s}
+.ses:hover{transform:translateY(-8px);border-color:rgba(226,208,160,.45);background:rgba(246,241,231,.07)}
+.ses .icon{color:var(--gold);line-height:0;margin-bottom:1.3rem;opacity:.9}
+.ses h3{font-size:clamp(1.35rem,2.6vw,1.85rem);color:var(--paper);letter-spacing:.06em}
+.ses .time{display:inline-block;margin:1.2rem 0 1.4rem;font-family:"Cormorant Garamond",serif;
+  font-size:1.5rem;letter-spacing:.16em;color:var(--pine);background:var(--gold-2);padding:.25rem 1.1rem;border-radius:2px}
+.ses .line{color:rgba(246,241,231,.9);font-family:"Noto Serif TC",serif;font-size:1.05rem;letter-spacing:.08em;margin-bottom:1.2rem}
+.ses .desc{color:rgba(246,241,231,.6);font-size:.92rem;line-height:1.95}
+.ses .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.7rem;padding-top:1.5rem;border-top:1px solid rgba(226,208,160,.15)}
+.ses .chips i{font-style:normal;font-size:.76rem;letter-spacing:.16em;color:var(--gold-2);
+  border:1px solid rgba(226,208,160,.28);padding:.3rem .8rem;border-radius:999px}
+.ses .glow{position:absolute;width:340px;height:340px;border-radius:50%;top:-140px;right:-120px;
+  background:radial-gradient(circle,rgba(194,161,92,.22),transparent 68%);pointer-events:none}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(226,208,160,.16);margin-top:clamp(1.2rem,2.6vw,2.2rem)}
+.rule-i{background:var(--pine);padding:1.6rem 1rem;text-align:center;font-size:.86rem;letter-spacing:.14em;color:rgba(246,241,231,.8)}
+.rule-i b{display:block;color:var(--gold-2);font-weight:400;font-size:1.05rem;margin-bottom:.35rem;font-family:"Noto Serif TC",serif}
+.quiet{text-align:center;margin-top:clamp(2rem,4vw,3rem);font-family:"Noto Serif TC",serif;
+  font-size:clamp(1rem,2vw,1.25rem);letter-spacing:.3em;color:var(--gold-2)}
+
+/* ---------- tea grid ---------- */
+.tea-hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;margin-bottom:clamp(3rem,6vw,5.5rem)}
+.tea-hero img{width:100%;box-shadow:var(--shadow)}
+.teas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(226,208,160,.18)}
+.tea{background:var(--ink);padding:clamp(1.6rem,3vw,2.4rem);position:relative;overflow:hidden;
+  transition:background .6s var(--ease)}
+.tea:hover{background:#0a1811}
+.tea .no{font-family:"Cormorant Garamond",serif;font-size:.75rem;letter-spacing:.3em;color:rgba(194,161,92,.6)}
+.tea h4{margin:.9rem 0 .5rem;font-size:1.22rem;color:var(--paper);letter-spacing:.08em}
+.tea .origin{font-size:.76rem;letter-spacing:.24em;color:var(--gold);margin-bottom:1.1rem;font-family:"Cormorant Garamond",serif;text-transform:uppercase}
+.tea p{font-size:.9rem;color:rgba(246,241,231,.62);line-height:1.9}
+.tea::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:width .7s var(--ease)}
+.tea:hover::before{width:100%}
+.occasions{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin-top:clamp(2.4rem,5vw,3.6rem)}
+.occasions i{font-style:normal;font-size:.8rem;letter-spacing:.2em;color:rgba(246,241,231,.75);
+  border:1px solid rgba(226,208,160,.25);padding:.55rem 1.25rem;border-radius:999px;transition:.4s var(--ease)}
+.occasions i:hover{background:var(--gold);color:var(--pine);border-color:var(--gold)}
+
+/* ---------- signature split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split.rev .fig{order:2}
+.split .fig img{width:100%;box-shadow:var(--shadow)}
+.split h3{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:.7rem}
+.split .sub{font-family:"Noto Serif TC",serif;color:var(--gold);letter-spacing:.24em;font-size:.9rem;margin-bottom:1.8rem}
+.split ul{list-style:none;margin:1.6rem 0}
+.split ul li{position:relative;padding-left:1.6rem;margin-bottom:.7rem;font-size:.95rem;color:rgba(246,241,231,.75)}
+.split ul li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:var(--gold)}
+.split .verse{border-left:1px solid rgba(226,208,160,.3);padding-left:1.5rem;margin-top:2rem;
+  font-family:"Noto Serif TC",serif;font-size:.98rem;line-height:2.1;color:rgba(246,241,231,.72)}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(226,208,160,.18);margin-top:clamp(2.5rem,5vw,4rem)}
+.tl div{background:var(--pine);padding:1.8rem 1.2rem}
+.tl b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--gold-2);font-weight:400;line-height:1}
+.tl span{display:block;margin-top:.7rem;font-size:.84rem;color:rgba(246,241,231,.68);line-height:1.8}
+
+/* ---------- cakes ---------- */
+.cake-hero{width:100%;box-shadow:var(--shadow);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.flavors{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2vw,1.6rem)}
+.fl{background:var(--paper-2);padding:clamp(1.5rem,2.6vw,2.2rem) 1.2rem;text-align:center;
+  border-top:3px solid var(--c);transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.fl:hover{transform:translateY(-10px);box-shadow:var(--shadow)}
+.fl .dot{display:block;width:46px;height:46px;border-radius:50%;background:var(--c);margin:0 auto 1.2rem;
+  box-shadow:inset 0 -8px 18px rgba(0,0,0,.14)}
+.fl h4{font-size:1.25rem;letter-spacing:.14em}
+.fl .en{font-family:"Cormorant Garamond",serif;font-size:.72rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-top:.35rem}
+.fl p{font-size:.85rem;color:var(--muted);margin-top:.9rem;line-height:1.85}
+.keeps{display:flex;flex-wrap:wrap;gap:1px;background:var(--paper-3);margin-top:clamp(2rem,4vw,3rem)}
+.keep{background:var(--paper);flex:1 1 220px;padding:1.5rem;text-align:center}
+.keep b{display:block;font-family:"Noto Serif TC",serif;color:var(--pine);font-size:1.05rem;font-weight:500}
+.keep span{font-size:.82rem;color:var(--muted);letter-spacing:.1em}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,2.4vw,2rem);margin-top:clamp(2.5rem,5vw,3.6rem)}
+.feat{text-align:center}
+.feat b{display:block;font-family:"Noto Serif TC",serif;font-size:1.05rem;color:var(--pine);letter-spacing:.2em;margin-bottom:.5rem}
+.feat span{font-size:.85rem;color:var(--muted);line-height:1.85}
+
+/* ---------- machine ---------- */
+.mach{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.mach img{width:100%;box-shadow:var(--shadow)}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(226,208,160,.18);margin:2rem 0}
+.spec{background:var(--ink);padding:1.5rem 1rem;text-align:center}
+.spec b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--gold-2);font-weight:400}
+.spec span{font-size:.78rem;color:rgba(246,241,231,.6);letter-spacing:.14em}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(226,208,160,.18);margin-top:clamp(2.5rem,5vw,4rem)}
+.step{background:var(--ink);padding:2rem 1.4rem;position:relative}
+.step .n{font-family:"Cormorant Garamond",serif;font-size:2.6rem;color:rgba(194,161,92,.28);line-height:1}
+.step b{display:block;margin:.6rem 0 .3rem;font-family:"Noto Serif TC",serif;font-size:1.1rem;color:var(--paper);font-weight:500;letter-spacing:.1em}
+.step span{font-family:"Cormorant Garamond",serif;font-size:.78rem;letter-spacing:.16em;color:rgba(194,161,92,.75)}
+.swatches{display:flex;gap:.6rem;margin-top:1.6rem}
+.swatches i{width:28px;height:28px;border-radius:50%;display:block;border:1px solid rgba(255,255,255,.18)}
+
+/* ---------- booking ---------- */
+.booking{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.6rem)}
+.bk{background:var(--paper-2);padding:clamp(1.8rem,3.4vw,3rem);position:relative;overflow:hidden;
+  transition:transform .8s var(--ease),box-shadow .8s var(--ease)}
+.bk:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.bk h3{font-size:1.6rem;margin-bottom:.4rem}
+.bk .en{font-family:"Cormorant Garamond",serif;letter-spacing:.28em;font-size:.74rem;color:var(--gold);text-transform:uppercase;margin-bottom:1.4rem}
+.bk ul{list-style:none}
+.bk ul li{position:relative;padding-left:1.5rem;margin-bottom:.75rem;font-size:.93rem;color:#4a463d;line-height:1.9}
+.bk ul li::before{content:"";position:absolute;left:0;top:.9em;width:7px;height:7px;border:1px solid var(--jade);transform:rotate(45deg)}
+.scenes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--paper-3);margin-top:clamp(1.5rem,3vw,2.6rem)}
+.scene{background:var(--paper);padding:1.6rem 1rem;text-align:center;font-family:"Noto Serif TC",serif;
+  font-size:1rem;letter-spacing:.2em;color:var(--pine)}
+.note{text-align:center;margin-top:2rem;font-size:.86rem;color:var(--muted);letter-spacing:.14em}
+
+/* ---------- gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal figure{overflow:hidden;position:relative;cursor:zoom-in;background:var(--ink)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--ease),opacity .6s;opacity:.92}
+.gal figure:hover img{transform:scale(1.08);opacity:1}
+.gal .t1{grid-column:span 2;grid-row:span 2}
+.gal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(8,20,15,.55));opacity:0;transition:opacity .6s}
+.gal figure:hover::after{opacity:1}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:.9rem 1.8rem;margin-top:2rem}
+.info dt{font-family:"Cormorant Garamond",serif;font-size:.76rem;letter-spacing:.26em;color:var(--gold);
+  text-transform:uppercase;padding-top:.5rem;white-space:nowrap}
+.info dd{font-size:1rem;color:rgba(246,241,231,.88);line-height:1.9}
+.info dd small{display:block;color:rgba(246,241,231,.5);font-size:.82rem;letter-spacing:.08em}
+.info dd a{border-bottom:1px solid rgba(226,208,160,.4);transition:color .4s,border-color .4s}
+.info dd a:hover{color:var(--gold-2);border-color:var(--gold-2)}
+.qr{background:var(--paper);padding:1.4rem;text-align:center;max-width:300px;margin-left:auto}
+.qr img{width:100%}
+.qr b{display:block;margin-top:.9rem;font-family:"Noto Serif TC",serif;color:var(--pine);font-size:.95rem;letter-spacing:.16em}
+.qr span{font-size:.8rem;color:var(--muted);letter-spacing:.14em}
+.cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 2rem;border-radius:2px;
+  font-size:.9rem;letter-spacing:.2em;transition:all .45s var(--ease)}
+.btn-gold{background:var(--gold);color:var(--pine)}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-3px)}
+.btn-line{border:1px solid rgba(226,208,160,.45);color:var(--gold-2)}
+.btn-line:hover{background:rgba(226,208,160,.12);transform:translateY(-3px)}
+
+/* ---------- footer ---------- */
+footer{background:#08150f;color:rgba(246,241,231,.5);padding:3.5rem 0 3rem;text-align:center}
+footer img{width:210px;margin:0 auto 1.6rem;opacity:.85}
+footer p{font-size:.82rem;letter-spacing:.16em;line-height:2}
+footer .fnav{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem;margin:1.6rem 0}
+footer .fnav a{font-size:.82rem;letter-spacing:.16em;transition:color .4s}
+footer .fnav a:hover{color:var(--gold-2)}
+footer .fine{margin-top:1.8rem;font-size:.72rem;letter-spacing:.14em;color:rgba(246,241,231,.28)}
+
+/* ---------- lightbox ---------- */
+#lb{position:fixed;inset:0;background:rgba(6,14,10,.96);z-index:10001;display:none;
+  align-items:center;justify-content:center;cursor:zoom-out;backdrop-filter:blur(6px)}
+#lb.on{display:flex;animation:fade .4s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+#lb img{max-width:92vw;max-height:88vh;object-fit:contain;box-shadow:0 40px 100px rgba(0,0,0,.7)}
+#lb .x{position:absolute;top:1.5rem;right:2rem;color:var(--paper);font-size:2rem;line-height:1;opacity:.7}
+
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .story,.tea-hero,.split,.mach,.contact,.booking,.sessions{grid-template-columns:1fr}
+  .split.rev .fig{order:0}
+  .teas,.flavors,.feats,.tl,.steps,.scenes,.facts,.rules{grid-template-columns:repeat(2,1fr)}
+  .specs{grid-template-columns:repeat(3,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal .t1{grid-column:span 2;grid-row:span 1}
+  .qr{margin:0 auto}
+  .story-fig .cap{left:0}
+  nav ul{display:none}
+  .burger{display:flex}
+  nav.open ul{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:rgba(20,48,38,.97);backdrop-filter:blur(20px);padding:1.6rem;gap:1.2rem;align-items:flex-start}
+}
+@media(max-width:820px){
+  .hero-bg{background-image:url(assets/hero-front-tall.jpg);background-position:center bottom}
+  @keyframes kb{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.07) translate3d(0,0,0)}}
+  .hero-inner{padding-bottom:14vh}
+  .hero-inner::before{background:radial-gradient(ellipse at 50% 50%,rgba(6,16,12,.34) 0%,rgba(6,16,12,.2) 44%,transparent 74%)}
+}
+@media(max-width:600px){
+  .teas,.flavors,.feats,.tl,.steps,.scenes,.facts,.rules,.specs{grid-template-columns:1fr}
+  .vlabel{display:none}
+  .hero h1{letter-spacing:.18em}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<nav id="nav">
+  <a class="brand" href="#top"><img src="assets/logo-light.png" alt="六淨山房 LiuJingShanFang"></a>
+  <ul id="menu">
+    <li><a href="#story">品牌</a></li>
+    <li><a href="#tea-hui">靜心茶會</a></li>
+    <li><a href="#tea">古樹茶</a></li>
+    <li><a href="#cake">輕乳酪蛋糕</a></li>
+    <li><a href="#machine">智能茶飲</a></li>
+    <li><a href="#booking">官邸包場</a></li>
+    <li><a href="#gallery">影像</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a class="nav-cta" href="#contact">預約洽詢</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-inner">
+    <img class="hero-logo" src="assets/logo-light.png" alt="六淨山房 LiuJingShanFang">
+    <h1>知事官邸古蹟餐廳</h1>
+    <span class="est">Tainan · Est. 1898</span>
+    <p class="tag">百年官邸 · 茶香咖啡 · 光影時光</p>
+    <div class="rule"></div>
+  </div>
+  <div class="scrollcue"><span>Scroll</span><i></i></div>
+</header>
+
+<!-- ============ RIBBON ============ -->
+<div class="ribbon">
+  <div class="track">
+    <span>晨光，讓今天從心出發</span><span>·</span><span>申時，讓自己慢慢回來</span><span>·</span>
+    <span>一日兩時，與自己重逢</span><span>·</span>
+    <span>晨光，讓今天從心出發</span><span>·</span><span>申時，讓自己慢慢回來</span><span>·</span>
+    <span>一日兩時，與自己重逢</span><span>·</span>
+  </div>
+</div>
+
+<!-- ============ STORY ============ -->
+<section class="sec" id="story">
+  <span class="vlabel">百年官邸 · 茶香咖啡 · 光影時光</span>
+  <div class="wrap">
+    <div class="story">
+      <div class="story-txt rv">
+        <span class="eyebrow">The House</span>
+        <p class="big">一杯可以喝的森林，<br>凝練成一杯琥珀色的甜香。</p>
+        <p>六淨山房落腳於 1898 年落成的<strong>台南知事官邸</strong>——紅磚拱廊、洗石子欄杆、穿廊而過的南國光影，一百多年來安靜地站在府城街心。</p>
+        <p>我們在這裡做三件事：把高海拔古樹的茶湯，用低溫手沖慢慢喚醒；把單純的食材，做成綿密到入口即化的輕乳酪蛋糕；再把兩個小時，還給每一位願意坐下來的人。</p>
+        <p>在百年官邸的靜謐氛圍中，品味一杯真正的好茶。</p>
+        <div style="display:flex;align-items:center;gap:1rem;margin-top:2rem">
+          <img class="seal" src="assets/seal.png" alt="嚴作">
+          <span style="font-size:.82rem;letter-spacing:.24em;color:var(--muted)">LIU JING SHAN FANG</span>
+        </div>
+      </div>
+      <div class="story-fig rv" data-d="2">
+        <img src="assets/venue-arcade.jpg" alt="知事官邸紅磚拱廊" data-par="0.06">
+        <div class="cap">Tainan 1898</div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact rv"><b data-count="1898" data-plain="1">1898</b><span>官邸落成</span></div>
+      <div class="fact rv" data-d="1"><b>兩時</b><span>晨光 · 申時</span></div>
+      <div class="fact rv" data-d="2"><b data-count="20">0</b><span>每場限額（位）</span></div>
+      <div class="fact rv" data-d="3"><b data-count="6">0</b><span>精選古樹茶品</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 靜心茶會 ============ -->
+<section class="sec sec-dark" id="tea-hui">
+  <span class="vlabel">音樂 · 古樹茶 · 茶食 · 古蹟時光</span>
+  <div class="wrap">
+    <div class="shead rv" style="text-align:center">
+      <span class="eyebrow">Two Hours a Day</span>
+      <h2>一日兩時，與自己重逢</h2>
+      <p class="zh-sub">在百年知事官邸，留兩個小時給自己。</p>
+    </div>
+
+    <div class="sessions">
+      <div class="ses rv" data-d="1">
+        <div class="glow"></div>
+        <div class="icon"><svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="7.5"/><g stroke-linecap="round"><path d="M20 3v5M20 32v5M3 20h5M32 20h5M8 8l3.5 3.5M28.5 28.5L32 32M32 8l-3.5 3.5M11.5 28.5L8 32"/></g></svg></div>
+        <h3>官邸晨光 · 頻率音樂茶餐會</h3>
+        <span class="time">09:00 – 11:00</span>
+        <p class="line">在世界喧鬧以前，先找回自己的節奏。</p>
+        <p class="desc">晨光灑落官邸，讓心慢慢醒來，迎接新的一天。</p>
+        <div class="chips"><i>頻率音樂</i><i>古樹茶品</i><i>精選輕食</i></div>
+      </div>
+      <div class="ses rv" data-d="2">
+        <div class="glow"></div>
+        <div class="icon"><svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M27 26.5A11.5 11.5 0 0 1 18.2 7.5a12.5 12.5 0 1 0 12.6 20.2 11.4 11.4 0 0 1-3.8-1.2z"/></svg></div>
+        <h3>官邸申時 · 午後靜心茶食會</h3>
+        <span class="time">15:00 – 17:00</span>
+        <p class="line">申時納清，以茶疏壓。</p>
+        <p class="desc">光影逐漸西斜，放下外界的催促，讓古樹茶香與音樂，把奔忙的心慢慢收回。</p>
+        <div class="chips"><i>主題音樂</i><i>古樹茶品</i><i>午後茶食</i></div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule-i rv"><b>不交談</b>安靜地各自存在</div>
+      <div class="rule-i rv" data-d="1"><b>不滑手機</b>把注意力留給此刻</div>
+      <div class="rule-i rv" data-d="2"><b>手機請靜音</b>不打擾他人的時光</div>
+      <div class="rule-i rv" data-d="3"><b>每場限額 20 位</b>採預約制</div>
+    </div>
+
+    <p class="quiet rv">只為自己留一段安靜的時光</p>
+  </div>
+</section>
+
+<!-- ============ 古樹茶 ============ -->
+<section class="sec sec-ink" id="tea">
+  <span class="vlabel">一杯好茶 · 一段靜心時光</span>
+  <div class="wrap">
+    <div class="tea-hero">
+      <div class="rv"><img src="assets/photo-pourover.jpg" alt="手沖古樹茶" data-par="0.05"></div>
+      <div class="rv" data-d="2">
+        <span class="eyebrow">Hand Brewed · Ancient Tree</span>
+        <h2 style="font-size:clamp(1.9rem,4.4vw,3.2rem)">手沖古樹茶</h2>
+        <p class="sub" style="font-family:'Noto Serif TC',serif;color:var(--gold);letter-spacing:.24em;font-size:.9rem;margin:1rem 0 1.6rem">一杯好茶 · 一段靜心時光</p>
+        <p class="lead">嚴選雲南與越南高海拔古樹原葉，以低溫手沖展現茶湯的純淨、香韻與生命力。在百年官邸的靜謐氛圍中，品味一杯真正的好茶。</p>
+        <ul style="list-style:none;margin-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:.7rem">
+          <li style="position:relative;padding-left:1.5rem;font-size:.92rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>古樹原葉 · 自然純淨</li>
+          <li style="position:relative;padding-left:1.5rem;font-size:.92rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>低溫手沖 · 細膩風味</li>
+          <li style="position:relative;padding-left:1.5rem;font-size:.92rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>香韻層次 · 回甘悠長</li>
+          <li style="position:relative;padding-left:1.5rem;font-size:.92rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>放鬆身心 · 享受靜下</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="teas">
+      <div class="tea rv"><span class="no">No.01</span><h4>雲南古樹 生普洱</h4><span class="origin">Yunnan</span><p>厚實回甘，越陳越香。山韻在舌根久久不散。</p></div>
+      <div class="tea rv" data-d="1"><span class="no">No.02</span><h4>雲南古樹 野生紅茶</h4><span class="origin">Yunnan</span><p>蜜香馥郁，甘甜滑順，入口是一整片林間的花蜜氣。</p></div>
+      <div class="tea rv" data-d="2"><span class="no">No.03</span><h4>雲南古樹 白茶</h4><span class="origin">Yunnan</span><p>毫香清雅，甘醇順口，愈放愈見時間的厚度。</p></div>
+      <div class="tea rv" data-d="3"><span class="no">No.04</span><h4>雲南古樹 紅茶</h4><span class="origin">Yunnan</span><p>香氣飽滿，溫潤耐泡，是最適合久坐慢聊的一款。</p></div>
+      <div class="tea rv" data-d="4"><span class="no">No.05</span><h4>越南河江 古樹白茶</h4><span class="origin">Hà Giang</span><p>清新花香，柔和回甘，茶湯乾淨得像雨後的空氣。</p></div>
+      <div class="tea rv" data-d="5"><span class="no">No.06</span><h4>越南河江 紫芽茶</h4><span class="origin">Hà Giang</span><p>芽葉紫韻，稀有珍品，帶著獨特而清晰的花香。</p></div>
+    </div>
+
+    <p style="text-align:center;margin-top:clamp(2.4rem,5vw,3.6rem);font-family:'Noto Serif TC',serif;letter-spacing:.24em;color:var(--gold-2)" class="rv">適合各種聚會與活動</p>
+    <div class="occasions rv" data-d="1">
+      <i>企業會議</i><i>品牌發表</i><i>協會交流</i><i>家庭聚會</i><i>生日慶生</i><i>好友聚會</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 景谷千年古樹 ============ -->
+<section class="sec sec-dark">
+  <span class="vlabel">無量山深處野韻</span>
+  <div class="wrap">
+    <div class="split">
+      <div class="fig rv"><img src="assets/photo-jinggu.jpg" alt="景谷千年古樹茶湯" data-par="0.05"></div>
+      <div class="rv" data-d="2">
+        <span class="eyebrow">Signature · Jinggu</span>
+        <h3>景谷 · 千年古樹</h3>
+        <p class="sub">從山野到杯中，從遠古到此刻</p>
+        <p class="lead" style="max-width:none">一杯可以喝的森林——凝練成一杯琥珀色的甜香。從三千五百四十萬年前的第一株茶樹，到無量山深處的千年古樹存下，時間把這片土地釀成茶的底韻。</p>
+        <ul>
+          <li>來自 3540 萬年前茶樹起源的地方</li>
+          <li>來自無量山深處未被驚擾的原始森林</li>
+          <li>來自數百年默默生長的古茶樹</li>
+          <li>來自製茶師手中延續近百年的滇紅技藝</li>
+        </ul>
+        <p class="verse">它不張揚，卻耐得住反覆品味；<br>它不複雜，卻值得慢慢體會。<br><br>願您在端起這杯茶的時候，也能感受到雲霧繚繞的山野、陽光穿透的林間，以及時間在這片土地上，緩慢而堅定的流淌。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 魚池十五年 ============ -->
+<section class="sec sec-ink">
+  <span class="vlabel">時間釀的一杯茶</span>
+  <div class="wrap">
+    <div class="split rev">
+      <div class="fig rv"><img src="assets/photo-yuchi.jpg" alt="魚池十五年陳年紅茶" data-par="0.05"></div>
+      <div class="rv" data-d="2">
+        <span class="eyebrow">Signature · Yuchi Aged 15Y</span>
+        <h3>魚池 · 十五年陳年紅茶</h3>
+        <p class="sub">一甲子的傳承，十五年的等待</p>
+        <p class="lead" style="max-width:none">在台灣南投魚池鄉，有一種茶，只為一盞乾淨、溫潤、陳香的老紅茶。海拔六百至八百公尺，年均溫十九度，紅壤土質、雨量豐沛——台灣最適合種紅茶的地方。</p>
+        <p class="verse">魚池十五年陳年紅茶，不是年年都有。<br>它是稀有的時間物：每一批老紅茶都是孤品，喝完就沒有了。<br><br>它的轉化，不是人為的加工，<br>是時間親手完成的一件事。</p>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="rv"><b>1925</b><span>第一批阿薩姆茶苗，在魚池落地生根。</span></div>
+      <div class="rv" data-d="1"><b>1928</b><span>魚池紅茶外銷倫敦，被歐洲品評專家譽為媲美印度高級紅茶。</span></div>
+      <div class="rv" data-d="2"><b>1973</b><span>台茶八號正式命名——濃郁麥芽香、焦糖香，口感飽滿厚實。</span></div>
+      <div class="rv" data-d="3"><b>15 Years</b><span>自然陳化，歲月之香。苦澀褪盡，取而代之的是醇厚滋味。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 輕乳酪蛋糕 ============ -->
+<section class="sec" id="cake">
+  <span class="vlabel">純粹 · 安心 · 美好</span>
+  <div class="wrap">
+    <div class="shead rv" style="text-align:center">
+      <span class="eyebrow">6&Prime; Light Cheesecake</span>
+      <h2>6 吋輕乳酪蛋糕</h2>
+      <p class="zh-sub">輕盈綿密 · 入口即化　—　用心的好味道，分享給在乎的人。</p>
+    </div>
+    <div class="rv" data-d="1"><img class="cake-hero" src="assets/cake-four.jpg" alt="六淨山房六吋輕乳酪蛋糕四種口味"></div>
+
+    <div class="flavors">
+      <div class="fl rv" style="--c:#e8d9a0"><span class="dot"></span><h4>檸檬</h4><p class="en">Lemon</p><p>清爽微酸，收在尾韻的一抹陽光。</p></div>
+      <div class="fl rv" data-d="1" style="--c:#e5c98c"><span class="dot"></span><h4>香草</h4><p class="en">Vanilla</p><p>最單純的一款，奶香乾淨綿長。</p></div>
+      <div class="fl rv" data-d="2" style="--c:#6f8f4a"><span class="dot"></span><h4>抹茶</h4><p class="en">Matcha</p><p>綿密細緻，如雲朵般的幸福口感。</p></div>
+      <div class="fl rv" data-d="3" style="--c:#6b4229"><span class="dot"></span><h4>巧克力</h4><p class="en">Chocolate</p><p>可可的厚度，被乳酪化得剛剛好。</p></div>
+    </div>
+
+    <div class="keeps">
+      <div class="keep rv"><b>冷藏 5 天</b><span>0–5°C</span></div>
+      <div class="keep rv" data-d="1"><b>冷凍 10 天</b><span>-18°C 以下</span></div>
+      <div class="keep rv" data-d="2"><b>回溫 10–15 分鐘</b><span>食用前先置於室溫，口感更佳</span></div>
+    </div>
+
+    <div class="feats">
+      <div class="feat rv"><b>嚴選食材</b><span>用簡單的食材，做出不簡單的美味</span></div>
+      <div class="feat rv" data-d="1"><b>綿密輕盈</b><span>口感細緻綿密，入口即化</span></div>
+      <div class="feat rv" data-d="2"><b>冷藏更美味</b><span>冰過像雪酪般柔滑濃郁</span></div>
+      <div class="feat rv" data-d="3"><b>質感包裝</b><span>簡約高雅提盒，送禮自用皆宜</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 智能茶飲機 ============ -->
+<section class="sec sec-ink" id="machine">
+  <span class="vlabel">好喝，不靠運氣</span>
+  <div class="wrap">
+    <div class="mach">
+      <div class="rv"><img src="assets/machine-colors.jpg" alt="六淨山房 SUPER EXTRACT TEA 智能萃取茶飲機"></div>
+      <div class="rv" data-d="2">
+        <span class="eyebrow">Super Extract Tea</span>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.8rem)">好喝，不靠運氣</h2>
+        <p class="sub" style="font-family:'Noto Serif TC',serif;color:var(--gold);letter-spacing:.24em;font-size:.9rem;margin:1rem 0 1.6rem">原葉鎖鮮 550 天</p>
+        <p class="lead">不懂泡也能泡、不需要複雜茶具、不用記水溫。把一杯穩定的好茶，放進辦公室與家的日常。</p>
+        <div class="specs">
+          <div class="spec"><b>99.999%</b><span>充氧鎖鮮</span></div>
+          <div class="spec"><b>30s</b><span>快速出茶</span></div>
+          <div class="spec"><b>550<small style="font-size:.6em"> 天</small></b><span>原葉鎖鮮</span></div>
+        </div>
+        <ul style="list-style:none">
+          <li style="position:relative;padding-left:1.6rem;margin-bottom:.7rem;font-size:.94rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>自動控溫 · 穩定萃取，每一杯都一樣</li>
+          <li style="position:relative;padding-left:1.6rem;margin-bottom:.7rem;font-size:.94rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>辦公室即位，比外送更快</li>
+          <li style="position:relative;padding-left:1.6rem;margin-bottom:.7rem;font-size:.94rem;color:rgba(246,241,231,.75)"><span style="position:absolute;left:0;color:var(--gold)">◦</span>避免浪費，長期成本更低</li>
+        </ul>
+        <div class="swatches">
+          <i style="background:#e2571f"></i><i style="background:#1e3a86"></i><i style="background:#191919"></i><i style="background:#e8c319"></i><i style="background:#0f7a34"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><span class="n">01</span><b>放入茶膠囊</b><span>Add the tea capsule</span></div>
+      <div class="step rv" data-d="1"><span class="n">02</span><b>選擇品類 · 智能萃取</b><span>Select &amp; smart extraction</span></div>
+      <div class="step rv" data-d="2"><span class="n">03</span><b>茶湯流出</b><span>Tea flows out</span></div>
+      <div class="step rv" data-d="3"><span class="n">04</span><b>即刻享用</b><span>Enjoy immediately</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 官邸包場 ============ -->
+<section class="sec" id="booking">
+  <span class="vlabel">茶席 · 府城詩歌會</span>
+  <div class="wrap">
+    <div class="shead rv" style="text-align:center">
+      <span class="eyebrow">Private Booking</span>
+      <h2>官邸包場增選服務</h2>
+      <p class="zh-sub">在百年官邸的光影之中，為聚會增添更深的文化氛圍與交流質感。</p>
+    </div>
+    <div class="booking">
+      <div class="bk rv" data-d="1">
+        <h3>茶席</h3>
+        <p class="en">Tea Ceremony</p>
+        <ul>
+          <li>以茶為媒，展開一段沉靜而有層次的品飲體驗</li>
+          <li>適合企業接待、貴賓茶會、文化交流</li>
+          <li>可搭配手沖古樹茶、茶食甜品與茶席服務安排</li>
+        </ul>
+      </div>
+      <div class="bk rv" data-d="2">
+        <h3>府城詩歌會</h3>
+        <p class="en">Poetry Gathering</p>
+        <ul>
+          <li>以府城人文與詩意為主題，展現古蹟雅聚氛圍</li>
+          <li>適合協會聚會、品牌活動、好友雅集</li>
+          <li>可安排朗讀、分享、主題交流內容</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scenes">
+      <div class="scene rv">企業聚會</div>
+      <div class="scene rv" data-d="1">品牌活動</div>
+      <div class="scene rv" data-d="2">協會交流</div>
+      <div class="scene rv" data-d="3">家庭雅聚</div>
+    </div>
+    <p class="note rv">包場採預約制，實際內容可依需求安排 · 歡迎預約洽詢</p>
+  </div>
+</section>
+
+<!-- ============ 影像 ============ -->
+<section class="sec sec-dark" id="gallery">
+  <span class="vlabel">官邸光影</span>
+  <div class="wrap">
+    <div class="shead rv" style="text-align:center">
+      <span class="eyebrow">The Residence</span>
+      <h2>官邸光影</h2>
+      <p class="zh-sub">紅磚、拱廊、南國的樹影——一百多年沒有變過的下午。</p>
+    </div>
+    <div class="gal rv">
+      <figure class="t1"><img src="assets/venue-day.jpg" alt="知事官邸日景" loading="lazy"></figure>
+      <figure><img src="assets/venue-front.jpg" alt="知事官邸正面" loading="lazy"></figure>
+      <figure><img src="assets/venue-column.jpg" alt="紅磚拱廊" loading="lazy"></figure>
+      <figure><img src="assets/venue-window.jpg" alt="官邸窗景" loading="lazy"></figure>
+      <figure><img src="assets/venue-night.jpg" alt="知事官邸夜景" loading="lazy"></figure>
+      <figure><img src="assets/venue-interior.jpg" alt="官邸茶食" loading="lazy"></figure>
+      <figure><img src="assets/photo-pourover.jpg" alt="官邸廊下手沖" loading="lazy"></figure>
+      <figure><img src="assets/photo-jinggu.jpg" alt="古樹茶湯" loading="lazy"></figure>
+      <figure><img src="assets/photo-yuchi-lake.jpg" alt="魚池茶山" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 聯絡 ============ -->
+<section class="sec sec-ink" id="contact">
+  <span class="vlabel">歡迎預約洽詢</span>
+  <div class="wrap">
+    <div class="contact">
+      <div class="info rv">
+        <span class="eyebrow">Reservation</span>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.8rem)">歡迎預約洽詢</h2>
+        <p class="lead" style="margin-top:1rem">茶會、包場與蛋糕訂購，都歡迎直接與我們聯繫。</p>
+        <dl>
+          <dt>Name</dt><dd>六淨山房 · 知事官邸古蹟餐廳<small>LIU JING SHAN FANG</small></dd>
+          <dt>Address</dt><dd>台南市東區衛民街 1 號<small>前鋒路博愛國小旁</small></dd>
+          <dt>Tel</dt><dd><a href="tel:062080918">(06) 208-0918</a></dd>
+          <dt>LINE</dt><dd><a href="https://line.me/R/ti/p/@137ltzuu" target="_blank" rel="noopener">@137ltzuu</a></dd>
+          <dt>Hours</dt><dd>晨光茶餐會 09:00–11:00<small>申時茶食會 15:00–17:00 · 每場限額 20 位</small></dd>
+        </dl>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://line.me/R/ti/p/@137ltzuu" target="_blank" rel="noopener">LINE 線上預約</a>
+          <a class="btn btn-line" href="tel:062080918">撥打電話</a>
+        </div>
+      </div>
+      <div class="rv" data-d="2">
+        <div class="qr">
+          <img src="assets/line-qr.jpg" alt="六淨山房 LINE 官方帳號 QR Code">
+          <b>掃碼預約</b>
+          <span>LINE @137ltzuu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-light.png" alt="六淨山房">
+    <p>百年官邸 · 茶香咖啡 · 光影時光</p>
+    <div class="fnav">
+      <a href="#story">品牌</a><a href="#tea-hui">靜心茶會</a><a href="#tea">古樹茶</a>
+      <a href="#cake">輕乳酪蛋糕</a><a href="#machine">智能茶飲</a><a href="#booking">官邸包場</a><a href="#contact">預約</a>
+    </div>
+    <p>台南市東區衛民街 1 號　·　(06) 208-0918　·　LINE @137ltzuu</p>
+    <p class="fine">© 六淨山房 LiuJingShanFang · 知事官邸古蹟餐廳　嚴作</p>
+  </div>
+</footer>
+
+<div id="lb"><span class="x">&times;</span><img src="" alt=""></div>
+
+<script>
+(function(){
+  // scroll progress
+  var prog=document.getElementById('prog'),nav=document.getElementById('nav');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    prog.style.width=(scrollY/(h||1)*100)+'%';
+    nav.classList.toggle('solid',scrollY>60);
+    // parallax
+    pars.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.bottom>0&&r.top<innerHeight){
+        var p=(r.top+r.height/2-innerHeight/2)/innerHeight;
+        el.style.transform='translate3d(0,'+(p*parseFloat(el.dataset.par)*100).toFixed(2)+'px,0)';
+      }
+    });
+    // hero parallax
+    if(scrollY<innerHeight){hero.style.transform='translate3d(0,'+(scrollY*0.28)+'px,0)';}
+    // nav active
+    var cur='';
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top<=innerHeight*0.4) cur=s.id; });
+    links.forEach(function(a){ a.classList.toggle('on',a.getAttribute('href')==='#'+cur); });
+  }
+  var hero=document.getElementById('heroBg');
+  var pars=[].slice.call(document.querySelectorAll('[data-par]'));
+  var secs=[].slice.call(document.querySelectorAll('section[id]'));
+  var links=[].slice.call(document.querySelectorAll('#menu a'));
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  onScroll();
+
+  // reveal
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  // count up
+  var cio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target,to=parseInt(el.dataset.count,10);
+      cio.unobserve(el);
+      if(el.dataset.plain){el.textContent=to;return;}
+      var t0=null,dur=1400;
+      function tick(t){ if(!t0)t0=t; var p=Math.min((t-t0)/dur,1);
+        el.textContent=Math.round(to*(1-Math.pow(1-p,3)));
+        if(p<1)requestAnimationFrame(tick); }
+      requestAnimationFrame(tick);
+    });
+  },{threshold:0.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
+
+  // burger
+  var b=document.getElementById('burger');
+  b.addEventListener('click',function(){nav.classList.toggle('open')});
+  document.querySelectorAll('#menu a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open')});
+  });
+
+  // lightbox
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+  document.querySelectorAll('.gal figure').forEach(function(f){
+    f.addEventListener('click',function(){
+      lbi.src=f.querySelector('img').src; lb.classList.add('on');
+      document.body.style.overflow='hidden';
+    });
+  });
+  function close(){lb.classList.remove('on');document.body.style.overflow='';}
+  lb.addEventListener('click',close);
+  addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+</body>
+</html>
